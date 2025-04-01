@@ -1,0 +1,23 @@
+*{
+    background-color:rgb(75, 69, 69) ;
+}
+.container{
+    font-size: 2rem;
+    font-family:'Lobster',cursive;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color:aqua;
+}
+
+.dice{
+    text-align: center;
+    display: inline-block;
+    font-family: cursive;
+}
+.footer{
+    display: block;
+    unicode-bidi: isolate;
+}
