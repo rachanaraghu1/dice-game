@@ -16,8 +16,55 @@
     text-align: center;
     display: inline-block;
     font-family: cursive;
+    margin: 0 20px;
+    padding: 20px;
 }
+
+.dice img {
+    width: 150px;
+    height: 150px;
+    margin: 10px 0;
+}
+
+.roll-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s;
+}
+
+.roll-btn:hover {
+    background-color: #45a049;
+}
+
+.roll-btn:active {
+    background-color: #3d8b40;
+}
+
+.winner-display {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.winner-display p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 .footer{
     display: block;
     unicode-bidi: isolate;
+    margin-top: 30px;
 }
