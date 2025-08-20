@@ -1,16 +1,51 @@
-var randomNumber1=Math.floor(Math.random()*6)+1;
-var randomeDiceImageSrc="dice"+randomNumber1+".png";
-var image1=document.querySelectorAll("img")[0];
-image1.setAttribute("src",randomeDiceImageSrc);
-var randomNumber2=Math.floor(Math.random()*6)+1;
-var randomeDiceImageSrc1="dice"+randomNumber2+".png";
-var image2=document.querySelectorAll("img")[1];
-image2.setAttribute("src",randomeDiceImageSrc1);
+let player1Score = 6;
+let player2Score = 6;
 
-if(randomNumber1>randomNumber2)
-document.querySelector("h1").innerHTML="WINNER PLAYER 1";
-else{
-    document.querySelector("h1").innerHTML="WINNER PLAYER 2";
+
+function rollDice(playerNumber) {
+    const randomNumber = Math.floor(Math.random() * 6) + 1;
+    const diceImageSrc = "dice" + randomNumber + ".png";
+    
+    if (playerNumber === 1) {
+        player1Score = randomNumber;
+        document.querySelector(".img1").setAttribute("src", diceImageSrc);
+    } else if (playerNumber === 2) {
+        player2Score = randomNumber;
+        document.querySelector(".img2").setAttribute("src", diceImageSrc);
+    }
+    
+    
+    updateWinnerDisplay();
 }
 
-document.querySelector("last").innerHTML="congradulations";
+
+function updateWinnerDisplay() {
+    const winnerText = document.getElementById("winner-text");
+    
+    if (player1Score > player2Score) {
+        winnerText.innerHTML = "🎉 PLAYER 1 WINS! 🎉";
+        winnerText.style.color = "#00ff00";
+    } else if (player2Score > player1Score) {
+        winnerText.innerHTML = "🎉 PLAYER 2 WINS! 🎉";
+        winnerText.style.color = "#00ff00";
+    } else {
+        winnerText.innerHTML = "🤝 IT'S A TIE! 🤝";
+        winnerText.style.color = "#ffff00";
+    }
+}
+
+
+function rollBothDice() {
+    rollDice(1);
+    rollDice(2);
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+   
+    document.querySelector(".img1").setAttribute("src", "dice6.png");
+    document.querySelector(".img2").setAttribute("src", "dice6.png");
+    
+    
+    updateWinnerDisplay();
+});
